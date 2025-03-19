@@ -4,8 +4,17 @@ server:
 spring:
   ai:
     ollama:
-      baseUrl: http://192.168.13.12:11434
+      baseUrl: http://localhost:11434
       chat:
         options:
-          model: deepseek-r1:70b
+          model: deepseek-r1:7b
           temperature: 0.7  
+      embedding:
+        model: quentinz/bge-large-zh-v1.5:latest
+    vectorstore:
+      chroma:
+        initialize-schema: true
+        collection-name: demo_cllection
+        client:
+          host: http://localhost
+          port: 8000
