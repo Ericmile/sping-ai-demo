@@ -1,13 +1,16 @@
 server:
   port: 8080
-
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+    
 spring:
   ai:
     ollama:
-      baseUrl: http://localhost:11434
+      baseUrl: http://192.168.13.12:11434
       chat:
         options:
-          model: deepseek-r1:7b
+          model: deepseek-r1:70b
           temperature: 0.7  
       embedding:
         model: quentinz/bge-large-zh-v1.5:latest
@@ -16,5 +19,5 @@ spring:
         initialize-schema: true
         collection-name: demo_cllection
         client:
-          host: http://localhost
+          host: http://192.168.13.15
           port: 8000
